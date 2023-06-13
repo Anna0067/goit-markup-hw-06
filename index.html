@@ -463,11 +463,12 @@
         </main>
         <footer class="footer">
             <div class="container">
+                <address class="footer-sections">
+                    <div>
                 <a class="logo-web-footer" href="/"
                     ><span class="logo-web">Web</span>Studio</a
                 >
-                <address>
-                    <div class="footer-sections">
+                
                         <div class="addres-box">
                             <p>m. Warszawa, Aleje Jerozolimskie 21</p>
                             <p class="footer-contact">
@@ -478,6 +479,7 @@
                                 <a href="tel:+48111111111"></a>+48 111 111 111
                             </p>
                         </div>
+                    </div>
                         <div class="joined-us-section">
                             <p class="joined-us">Dołącz do nas</p>
                             <ul class="social-media-footer">
@@ -537,14 +539,63 @@
                                         </svg>
                                     </a>
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
+                                </ul>
+</div>
+    <div class="footer-newsletter">
+      <form>
+        <label for="newsletter" ><p class="footer-inscription">Zapisz się do newslettera</p></label>
+        <div class="input-send">
+        <input id="newsletter" type="email" placeholder="E-mail" class="newsletter-input">
+        <button type="submit" class="main-button">Zapisz się <svg width="24px" height="24" class="icon-newsletter"><use href="./images/icons.svg#icon-send"></use></svg></button></div>
+      </form>
+    </div>
+                    
                 </address>
-            </div>
+            
         </footer>
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
+                <p class="newsletter">Zostaw swoje dane w formularzu poniżej</p>
+<form >
+  <label class="form"> 
+    Imię
+    <div class="input-style">
+    <input type="name" name="name" required/>
+    <svg class="svg-form" width="12" height="12">
+        <use href="./images/icons.svg/man.svg#icon-man">
+        </use>
+    </svg>
+    </div>
+  </label>
+  <label class="form" autocomplete="on">
+    Telefon
+    <div class="input-style">
+    <input type="tel" name="phone" required />
+    <svg class="svg-form" width="12px" height="12px">
+        <use href="./images/icons.svg/man.svg#icon-telephone">
+        </use>
+    </svg>
+    </div>
+  </label class="form">
+  <label class="form"> Email 
+    <div class="input-style">
+    <input type="email" name="email" required/>
+    <svg class="svg-form" width="12px" height="12px">
+        <use href="./images/icons.svg/man.svg#icon-envelope-form">
+        </use>
+    </svg>
+    </div>
+    </label class="form">
+  <label class="form"> Komentarz
+   <textarea class="form" name="feedback" rows="5" placeholder="Wprowadź tekst"></textarea>
+  </label>
+<label class="rodo-form">
+    <input class="checkbox" type="checkbox" name="rodo" value="rodo" />
+  Oświadczam iż akceptuję <a class="rodo-links" href="#">Regulamin</s> i <a class="rodo-links" href="#">Politykę Prywatności.</span>
+  
+ </label>
+  <button type="submit" class="form-send-button">Wyślij</button>
+</form>
                 <button type="button" class="modal-close" data-modal-close="">
                     x
                 </button>

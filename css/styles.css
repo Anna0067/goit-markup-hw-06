@@ -192,8 +192,6 @@ a {
     font-size: 16px;
     width: 200px;
     height: 50px;
-    left: 700px;
-    top: 430px;
 }
 .backdrop {
     display: flex;
@@ -216,9 +214,10 @@ a {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     cursor: auto;
 }
+
 .modal-close {
     border-radius: 50%;
     border-color: var(--border-lightgrey);
@@ -516,6 +515,7 @@ a {
     font-size: 18px;
     line-height: 1, 5;
     background-color: var(--brand-color);
+    opacity: 0.9;
     letter-spacing: 0.03em;
     color: var(--title);
     top: 100%;
@@ -557,7 +557,6 @@ a {
     padding-bottom: 9px;
     padding-right: 70px;
     line-height: 1, 7;
-    justify-content: flex-start;
 }
 .footer-contact {
     color: rgba(255, 255, 255, 0.6);
@@ -587,7 +586,7 @@ a {
     display: flex;
     max-width: 206px;
     list-style: none;
-    align-items: center;
+    margin-right: 0;
 }
 .social-media-footer-single {
     fill: var(--title);
@@ -607,18 +606,95 @@ a {
 }
 .footer-sections {
     display: flex;
+    flex-direction: row;
 }
-.sign-up {
+
+.form {
+    display: flex;
+    flex-direction: column;
     font-family: "Roboto";
     font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: #757575;
+    border-color: rgba(117, 117, 117, 0.5);
+    max-width: 448px;
+    padding: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
+    resize: none;
+}
+.input-style {
+    display: block;
+    position: relative;
+    margin-top: 4px;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-style:hover,
+.input-style:focus-within {
+    fill: var(--brand-color);
+    border-color: var(--brand-color);
+}
+.svg-form {
+    fill: var(--black);
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 13%;
+}
+.placeholder {
+    padding: 16px;
+}
+.rodo-form {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #757575;
+    justify-content: center;
+    margin: 20px 0 30px 15px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    display: flex;
+}
+.checkbox {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--brand-color-grey);
+}
+.rodo-links {
+    color: var(--brand-color);
+    text-decoration: underline;
+}
+.form-send-button {
+    color: var(--title);
+    cursor: pointer;
+    background-color: var(--brand-color);
     font-weight: 700;
     font-size: 16px;
-    line-height: 30px;
-    background-color: #2196f3;
     width: 200px;
     height: 50px;
-    text-align: center;
-    color: white;
+    margin: 30px 164px 39px;
+}
+
+.footer-newsletter {
+    padding-left: 78px;
+    padding-top: 20px;
+}
+.footer-inscription {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-style: normal;
 }
 .newsletter {
     font-family: "Roboto";
@@ -630,26 +706,35 @@ a {
     text-transform: uppercase;
     width: 448px;
     height: 23px;
-    left: 561px;
-    top: 262px;
-    padding-bottom: 20px;
 }
-.footer-newsletter {
-    display: inline;
-    width: 570px;
-    height: 86px;
-    padding-left: 78px;
-}
-.email-button-section {
+.input-send {
+    margin-top: 20px;
     display: flex;
     gap: 12px;
-    padding-top: 20px;
 }
-.footer-email {
+.newsletter-input {
     width: 358px;
     height: 50px;
-    font-size: 16px;
+    background-color: inherit;
+    border: 1px solid var(--border-lightgrey);
+    border-radius: 4px;
     padding-left: 16px;
-    background-color: var(--backgroud-grey);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.form-input:focus {
+    outline: 1px solid var(--brand-color-blue);
+    transition-property: outline;
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
+}
+
+.form-input:focus + svg {
+    fill: var(--brand-color-blue);
+    transition-property: fill;
+    transition-duration: var(--default-time);
+    transition-timing-function: var(--default-timing-function);
+}
+
+.icon-newsletter {
+    fill: var(--title);
+    margin-left: 24px;
 }
