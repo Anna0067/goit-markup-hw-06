@@ -544,58 +544,79 @@
     <div class="footer-newsletter">
       <form>
         <label for="newsletter" ><p class="footer-inscription">Zapisz się do newslettera</p></label>
-        <div class="input-send">
+        <div class="footer-button">
         <input id="newsletter" type="email" placeholder="E-mail" class="newsletter-input">
-        <button type="submit" class="main-button">Zapisz się <svg width="24px" height="24" class="icon-newsletter"><use href="./images/icons.svg#icon-send"></use></svg></button></div>
+        <button type="submit" class="main-button">Zapisz się <svg width="24px" height="24" class="icon-newsletter"><use href="./images/icons.svg#icon-icon-send"></use></svg></button></div>
       </form>
     </div>
                     
                 </address>
-            
         </footer>
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-                <p class="newsletter">Zostaw swoje dane w formularzu poniżej</p>
-<form >
-  <label class="form"> 
-    Imię
-    <div class="input-style">
-    <input type="name" name="name" required/>
-    <svg class="svg-form" width="12" height="12">
-        <use href="./images/icons.svg/man.svg#icon-man">
-        </use>
-    </svg>
-    </div>
+<form class="form-style" autocomplete="on ">
+                <p class="form-newsletter">Zostaw swoje dane w formularzu poniżej</p>
+ <div class="input-style">
+ <label for="name" class="form">  
+    Imię</label>
+    <input 
+          class="form-input" 
+          id="name" 
+          type="text" 
+          name="name" 
+          required 
+        />
+    <svg width="18px" height="18px" class="icons-form" ><use href="./images/icons.svg#icon-man"></use></svg>
+  </svg>
   </label>
-  <label class="form" autocomplete="on">
-    Telefon
-    <div class="input-style">
-    <input type="tel" name="phone" required />
-    <svg class="svg-form" width="12px" height="12px">
+ 
+ <div class="input-style">
+   <label for="phone" class="form">
+        Telefon</label>
+ 
+    <input 
+          class="form-input" 
+          id="phone" 
+          type="tel" 
+          name="phone_number"
+          />
+    <svg class="icons-form" width="18px" height="18px">
         <use href="./images/icons.svg/man.svg#icon-telephone">
         </use>
     </svg>
-    </div>
-  </label class="form">
-  <label class="form"> Email 
-    <div class="input-style">
-    <input type="email" name="email" required/>
-    <svg class="svg-form" width="12px" height="12px">
+ </div>
+
+  <div class="input-style">
+  <label for="e-mail" class="form">Email</label>
+    <input id="e-mail" type="email" name="email" class="form-input" >
+    <svg class="icons-form" width="18px" height="18px">
         <use href="./images/icons.svg/man.svg#icon-envelope-form">
         </use>
     </svg>
-    </div>
-    </label class="form">
-  <label class="form"> Komentarz
-   <textarea class="form" name="feedback" rows="5" placeholder="Wprowadź tekst"></textarea>
+  </div>
+
+
+</label class="input-style">
+  <label for="comment" class="form"><p>Komentarz</p></label>
+    <textarea id="comment" name="comment" placeholder="Wprowadź tekst" rows="5" class="textarea"></textarea>
   </label>
-<label class="rodo-form">
-    <input class="checkbox" type="checkbox" name="rodo" value="rodo" />
-  Oświadczam iż akceptuję <a class="rodo-links" href="#">Regulamin</s> i <a class="rodo-links" href="#">Politykę Prywatności.</span>
-  
+</div>
+
+ <label class="checkbox-label" for="checkbox-accept">  
+        <input class="checkbox-hidden" type="checkbox" width="16px"height="15px"
+        name="reg_accept" required>
+        <svg class="checkbox-icon-unchecked" width="16px" height="15px"> 
+          <use href="./images/icons.svg#icon-box-unchecked"></use>
+        </svg>
+        <svg class="checkbox-icon" width="16px" height="15px"> 
+          <use href="./images/icons.svg#icon-tick-box"></use>
+        </svg>
+
+        <div class="checkbox-text">Oświadczam iż akceptuję <a href="">Regulamin</a> i <a href="">Politykę Prywatności.</a></div>
  </label>
-  <button type="submit" class="form-send-button">Wyślij</button>
 </form>
+  <button type="submit" class="form-send-button">Wyślij</button>
+
                 <button type="button" class="modal-close" data-modal-close="">
                     x
                 </button>

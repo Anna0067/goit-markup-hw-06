@@ -9,6 +9,7 @@
     --button-white: #f5f4fa;
     --grey: #757575;
     --border-lightgrey: #afb1b8;
+    --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -604,29 +605,37 @@ a {
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-sections {
-    display: flex;
-    flex-direction: row;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
+.form-newsletter {
     font-family: "Roboto";
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    color: #757575;
-    border-color: rgba(117, 117, 117, 0.5);
-    max-width: 448px;
-    padding: 12px;
-    padding-left: 40px;
-    padding-right: 40px;
-    resize: none;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #212121;
+    padding-top: 40px;
+}
+.form-style {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    width: 448px;
+}
+.form {
+width: 448px;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+letter-spacing: 0.01em;
+margin: 10px 0 4px 0;
+display: flex;
+color: #757575;
+border-color: rgba(117, 117, 117, 0.5);
+
 }
 .input-style {
+    width: 448px;
     display: block;
     position: relative;
     margin-top: 4px;
@@ -639,39 +648,92 @@ a {
     fill: var(--brand-color);
     border-color: var(--brand-color);
 }
-.svg-form {
+.icons-form {
     fill: var(--black);
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
     left: 13%;
 }
-.placeholder {
-    padding: 16px;
+.textarea {
+    width: 448px;
+    height: 120px;
+    background-color: inherit;
+    border: 1px solid color: rgba(117, 117, 117, 0.5);
+    border-radius: 4px;
+    padding: 12px 16px;
+    resize: none;
+    display: block;
+} 
+
+.checkbox-label{
+margin: 20px 0 30px 15px;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0.03em;
+color: var(--grey);
+display: flex;
+align-items: center;
+position: relative;
 }
-.rodo-form {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #757575;
-    justify-content: center;
-    margin: 20px 0 30px 15px;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    display: flex;
-}
-.checkbox {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: 0.03em;
-    color: var(--brand-color-grey);
-}
-.rodo-links {
-    color: var(--brand-color);
+.checkbox-label a{
     text-decoration: underline;
+    color: var(--brand-color);
+}
+.checkbox-icon{
+    position: absolute;
+   color:var(--title)
+    border-radius: 2px;
+    visibility: hidden;
+    transition-property: background-color visibility scale;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic-bezier);
+    scale:0;
+    
+}
+
+.checkbox-hidden:checked ~ .checkbox-icon{
+    visibility: visible;
+    background-color: var(--brand-color);
+    scale:1;
+}
+
+.checkbox-hidden:checked ~ .checkbox-icon-unchecked{
+    scale: 0;
+}
+
+.checkbox-icon-unchecked{
+    position: absolute;
+    scale: 1;
+    transition:scale, 0.2s
+}
+
+.checkbox-text{
+    margin-left: 8px;
+}
+
+.checkbox-hidden{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 15px;
+    z-index: 10;
+}
+
+.form-input:focus-within {
+    outline: 1px solid var(--brand-color);
+    transition-property: outline;
+    transition-duration:250ms;
+    transition-timing-function: var(--cubic-bezier);
+}
+
+.form-input:focus-within + svg {
+    fill: var(--brand-color);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic-bezier);
 }
 .form-send-button {
     color: var(--title);
@@ -679,9 +741,14 @@ a {
     background-color: var(--brand-color);
     font-weight: 700;
     font-size: 16px;
-    width: 200px;
     height: 50px;
-    margin: 30px 164px 39px;
+    width:200px;
+   margin: 30px 164px 40px 164px;
+
+}
+.footer-sections {
+    display: flex;
+    flex-direction: row;
 }
 
 .footer-newsletter {
@@ -696,22 +763,13 @@ a {
     text-transform: uppercase;
     font-style: normal;
 }
-.newsletter {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    width: 448px;
-    height: 23px;
-}
-.input-send {
+
+.footer-button {
     margin-top: 20px;
     display: flex;
     gap: 12px;
 }
+
 .newsletter-input {
     width: 358px;
     height: 50px;
@@ -719,19 +777,6 @@ a {
     border: 1px solid var(--border-lightgrey);
     border-radius: 4px;
     padding-left: 16px;
-}
-.form-input:focus {
-    outline: 1px solid var(--brand-color-blue);
-    transition-property: outline;
-    transition-duration: var(--default-time);
-    transition-timing-function: var(--default-timing-function);
-}
-
-.form-input:focus + svg {
-    fill: var(--brand-color-blue);
-    transition-property: fill;
-    transition-duration: var(--default-time);
-    transition-timing-function: var(--default-timing-function);
 }
 
 .icon-newsletter {
