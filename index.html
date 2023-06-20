@@ -562,11 +562,11 @@
  <label for="name" class="modal__label">  
     Imię</label>
     <input 
-          class="modal__input--style" 
-          id="name" 
-          type="text" 
-          name="name" 
-          required 
+        class="modal__input--style" 
+        id="name" 
+        type="text" 
+        name="name" 
+        required
         />
     <svg width="18px" height="18px" class="modal__input--icon" ><use href="./images/icons.svg/symbol-defs-form.svg#icon-man"></use></svg>
   </svg>
@@ -577,11 +577,13 @@
         Telefon</label>
  
     <input 
-          class="modal__input--style" 
-          id="phone" 
-          type="tel" 
-          name="phone_number"
-          />
+        class="modal__input--style" 
+        id="phone" 
+        type="tel" 
+        name="phone_number"
+        required
+        minlength="9"
+        />
     <svg class="modal__input--icon" width="18px" height="18px">
         <use href="./images/icons.svg/symbol-defs-form.svg#icon-telephone">
         </use>
@@ -590,7 +592,7 @@
 
   <div class="modal__input">
   <label for="e-mail" class="modal__label">Email</label>
-    <input id="e-mail" type="email" name="email" class="modal__input--style" >
+    <input id="e-mail" type="email" name="email" class="modal__input--style" required minlength="5">
     <svg class="modal__input--icon" width="18px" height="15px">
         <use href="./images/icons.svg/symbol-defs-form.svg#icon-envelope-form">
         </use>
@@ -604,23 +606,24 @@
   
 </div>
 
- <label class="modal__checkbox" for="checkbox-accept">  
-        <input class="modal__checkbox--hidden" type="checkbox" width="16px"height="15px"
-        name="reg_accept" required>
-        <svg class="modal__checkbox--unchecked" width="16px" height="15px"> 
-          <use href="./images/icons.svg/symbol-defs-form.svg#icon-icon-unchecked"></use>
-        </svg>
-        <svg class="modal__checkbox--icon" width="16px" height="15px"> 
-          <use href="./images/icons.svg/symbol-defs-form.svg#icon-icon-check"></use>
-        </svg>
-
-        <div class="modal__checkbox--text">Oświadczam iż akceptuję <a href="">Regulamin</a> i <a href="">Politykę Prywatności.</a></div>
  </label>
+    <label class="checkbox" for="user-acceptance">
+        <input class="checkbox__input checkbox-hidden"
+            type="checkbox"
+            name="acceptance"
+            id="user-acceptance" />
+            <div class="checkbox__checked">
+             <svg class="checkbox__bacground" width="16" height="15">
+                <use href="./images/icons.svg/symbol-defs-form.svg#icon-icon-unchecked"></use>
+             </svg>
+            </div>
+        <div class="modal__checkbox--text">Oświadczam iż akceptuję <a href="">Regulamin</a> i <a href="">Politykę Prywatności.</a></div>
+    </label>
 </form>
   <button type="submit" class="modal__button">Wyślij</button>
 
                 <button type="button" class="modal__close" data-modal-close="">
-                    x
+                   <b>x</b> 
                 </button>
             </div>
         </div>
